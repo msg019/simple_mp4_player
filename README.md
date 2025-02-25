@@ -18,7 +18,7 @@ Send small mp4 videos from the server to the client and play them back on the cl
 ## Instalations
 
 ### clone repository
-git clone https://github.com/msg019/simple_mp4_player  
+git clone https://github.com/msg019/simple_mp4_player.git    
 cd simple_mp4_player  
 
 ### set up Backend
