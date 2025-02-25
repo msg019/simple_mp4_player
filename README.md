@@ -18,21 +18,21 @@ Send small mp4 videos from the server to the client and play them back on the cl
 ## Instalations
 
 ### clone repository
-git clone repository
-cd repository
+git clone https://github.com/msg019/simple_mp4_player  
+cd simple_mp4_player  
 
 ### set up Backend
 IMPORTANT--> In the videos folder, put the videos with mp4 extension
 
-cd backend
-python -m venv venv
-venv/Scripts/activate  //Windows
-pip install -r requirements.txt
-python server.py
+cd backend  
+python -m venv venv  
+venv/Scripts/activate  //Windows  
+pip install -r requirements.txt  
+python server.py  
 
 ### set up Frontend
-cd frontend
-npm install
-npm run dev
+cd frontend  
+npm install  
+npm run dev  
 
 
