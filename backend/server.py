@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_socketio import SocketIO, emit
 from dotenv import load_dotenv
 import os
-from function import listVideos, sendVideo, searchMiniature, createMiniature
+from function import listVideos, sendVideo, searchThumbnails, createThumbnail
 
 env=load_dotenv()
 
@@ -22,7 +22,7 @@ def home():
 @app.route('/listvideos',methods=['POST'])
 def list_videos():
     if request.method=='POST':
-        createMiniature()
+        createThumbnail()
         return jsonify(listVideos())
 
 @app.route('/redi', methods=['GET'])
@@ -39,7 +39,7 @@ def images():
     if request.method=='POST':
         title=request.json['title']
         
-        return jsonify({'image':searchMiniature(title)})
+        return jsonify({'image':searchThumbnails(title)})
 
 @sockApp.on('video')
 def Video(title):

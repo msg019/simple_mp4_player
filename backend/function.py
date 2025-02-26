@@ -1,7 +1,7 @@
 import time, os,base64, cv2
 
 videosPath='./videos/'
-miniaturesPath='./miniatures/'
+thumbnailsPath='./thumbnails/'
 
 def sendVideo(title, emit):
     try:
@@ -16,17 +16,20 @@ def sendVideo(title, emit):
 
 def listVideos():
     videos= os.listdir(videosPath)
+    videos.remove('.gitignore')
     return videos
-def listMiniature():
-    return os.listdir(miniaturesPath)
+def listThumbnail():
+    thum=os.listdir(thumbnailsPath)
+    thum.remove('.gitignore')
+    return thum
 
 
-def createMiniature():
+def createThumbnail():
     namesVideos=listVideos()
-    miniatures=listMiniature()
+    thumbnails=listThumbnail()
 
     for name in namesVideos:
-        if not name.replace('.mp4','.jpg') in miniatures:
+        if not name.replace('.mp4','.jpg') in thumbnails:
 
             vid= cv2.VideoCapture(videosPath+name)
             if not vid: print('Error opening file')
@@ -39,12 +42,12 @@ def createMiniature():
 
                 ret, frame= vid.read()
                 if ret:
-                    cv2.imwrite(miniaturesPath+name.replace('.mp4','.jpg'), frame)
+                    cv2.imwrite(thumbnailsPath+name.replace('.mp4','.jpg'), frame)
                 vid.release()
 
 
-def searchMiniature(name):
-    with open(miniaturesPath+name+'.jpg', 'rb') as image:
+def searchThumbnails(name):
+    with open(thumbnailsPath+name+'.jpg', 'rb') as image:
         str= base64.b64encode(image.read()).decode('utf-8')
         return str
 

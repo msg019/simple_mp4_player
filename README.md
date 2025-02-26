@@ -22,7 +22,7 @@ git clone https://github.com/msg019/simple_mp4_player.git
 cd simple_mp4_player  
 
 ### set up Backend
-IMPORTANT--> In the videos folder, put the videos with mp4 extension
+IMPORTANT➡️ In the videos folder, put the videos with mp4 extension. Keep the .gitignore files in videos and thumbnails folders. 
 
 cd backend  
 python -m venv venv  
